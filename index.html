@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  </head>
+
+  <body>
+  <div id="app">
+    <h1>Hello All</h1>
+    <p>
+      <router-link to="/swan" class="animal">스완</router-link>
+      <router-link to="/charlse" class="animal">찰스</router-link>
+      <router-link to="/tobam" class="animal">토밤</router-link>
+    </p>
+    <router-view></router-view>
+    <p>
+      <button v-on:click = "goDetail()" v-show='toggleDetail'>자세히 보기</button>
+      <button v-on:click = "goHome()" v-show='toggleHome'>홈으로 가기</button>
+    </p>
+  </div>
+
+  <script src="js/main.js"></script>
+  </body>
+</html>
