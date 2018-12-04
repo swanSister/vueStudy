@@ -32,11 +32,7 @@ window.onload = function(){
     },
     { path: '/tobam', component: Tobam
     },
-    { name : 'swan', path: '/detail:/swan', component: Detail
-    },
-    { name : 'charlse', path: '/detail:/charlse', component: Detail
-    },
-    { name : 'tobam', path: '/detail:/tobam', component: Detail
+    { path: '/detail/:name/:age/:place', component: Detail
     }
   ]
 
@@ -90,7 +86,9 @@ window.onload = function(){
        this.toggleHome = true
        if(checkAnimalPath(this.$route.path)){
          var path = this.$route.path.replace("/","")
-         this.$router.push({ path:'/detail', name : path, params:AnimalData[path]})
+         var animalData = AnimalData[path]
+         var sendData = animalData.name+"/"+animalData.age+"/"+animalData.place
+         this.$router.push({ path:'/detail/'+sendData})
        }
      },
      goHome:function(){
